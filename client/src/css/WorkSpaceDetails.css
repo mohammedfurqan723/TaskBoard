@@ -1,0 +1,13 @@
+.panel__details__ctr{
+    margin-top: 80px;
+}
+
+.panel__name{
+    font-size:2rem;
+    color:var(--primary-clr-black-2);
+}
+
+.panel__srt__desc{
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
