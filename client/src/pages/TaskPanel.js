@@ -1,79 +1,45 @@
 import NoTask from './NoTask'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import TaskCategory from './TaskCategory'
-import avatar from '../asserts/logo/avatar9.png'
 import '../css/TaskPanel.css'
 
 const TaskPanel = () => {
-    const taskSections = [
-        {
-            taskSection: 'Development',
-            taskList: [
-                {
-                    taskName: 'Landing Page',
-                    shortDesc: 'Prepare design system for Momo landing page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '22h 30m',
-                },
-                {
-                    taskName: 'Parallex Page',
-                    shortDesc: 'Prepare design system for Ecommerce page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '48h 30m'
-                }
-            ]
+    const [loader, setLoader] = useState(true)
+    const [hasTasks, setHasTasks] = useState(true);
 
-        },
-        {
-            taskSection: 'Design',
-            taskList: [
-                {
-                    taskName: 'Landing Page',
-                    shortDesc: 'Prepare design system for Momo landing page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '22h 30m',
-                },
-                {
-                    taskName: 'Parallex Page',
-                    shortDesc: 'Prepare design system for Ecommerce page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '48h 30m'
-                }
-            ]
+    const { userPersonalTasks } = useSelector(state => state.userReducer);
 
-        },
-        {
-            taskSection: 'Bug Fix',
-            taskList: [
-                {
-                    taskName: 'Landing Page',
-                    shortDesc: 'Prepare design system for Momo landing page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '22h 30m',
-                },
-                {
-                    taskName: 'Parallex Page',
-                    shortDesc: 'Prepare design system for Ecommerce page.',
-                    tags: ['New Client', 'New Project', 'System Design'],
-                    avatar: [avatar, avatar, avatar],
-                    estTime: '48h 30m'
-                }
-            ]
+    useEffect(() => {
+        if (userPersonalTasks) {
+            if (userPersonalTasks?.development?.length >= 1 || userPersonalTasks?.design?.length >= 1 || userPersonalTasks?.bugfix?.length >= 1) {
+                setLoader(false)
+                setHasTasks(true);
+            }
+            else {
+                setLoader(false);
+                setHasTasks(false);
+            }
+        }
 
-        },
-    ]
-    const data = true;
+    }, [userPersonalTasks])
+
     return (
         <section className="tp__ctr">
-            {data ?
-                taskSections?.map((item, id) => <TaskCategory key={id} section={item} />)
+            {hasTasks ?
+                [
+                    userPersonalTasks?.development?.length >= 1 && <TaskCategory key={1} sectionData={userPersonalTasks?.development} sectionName={'Development'} />,
+                    userPersonalTasks?.design?.length >= 1 && <TaskCategory key={2} sectionData={userPersonalTasks?.design} sectionName={'Design'} />,
+                    userPersonalTasks?.bugfix?.length >= 1 && <TaskCategory key={3} sectionData={userPersonalTasks?.bugfix} sectionName={'Bugfix'} />
+                ]
                 :
                 <NoTask />
             }
+
+            <div className={`loader__wrapper ${loader && 'showLoader'}`}>
+                <div className='loader' />
+            </div>
+
         </section>
     )
 }

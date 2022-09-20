@@ -1,0 +1,57 @@
+#expi__section,
+#edu__section,
+#userdetailsform__section{
+    width:100%;
+    height:auto;
+    padding:30px;
+    padding-top:70px;
+}
+
+.se__wpr{
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+}
+
+.start__wpr:first-child{
+    margin-top: 0;
+}
+
+.dob__wpr{
+    margin: 0;
+}
+
+.start__wpr,
+.end__wpr,
+.worktype__wpr{
+    width:160px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sbt__btn,
+.rm__btn{
+    border: none;
+    outline: none;
+    padding:3px 10px;
+    margin-right:10px;
+    border-radius: 4px;
+    color:white;
+    background-color: rgb(49, 49, 240);
+}
+
+.cancel__btn,
+.sbt__btn,
+.rm__btn{
+    font-size: 1.3rem;
+    padding:5px 15px;
+    border-radius: 4px;
+    color:white;
+}
+.sbt__btn{
+    background-color: rgb(81, 208, 81);
+}
+.rm__btn{
+    background-color: rgb(49, 49, 240);
+}
+

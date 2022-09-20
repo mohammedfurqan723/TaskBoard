@@ -60,7 +60,10 @@ body {
 }
 
 input,
-textarea{
+textarea,
+button,
+select,
+option{
   font-family: 'Poppins', sans-serif;
 }
 code {
