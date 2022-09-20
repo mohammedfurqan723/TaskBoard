@@ -33,6 +33,7 @@
 }
 
 .tb__dots__wpr{
+    position: relative;
     width: 25px;
     height:25px;
     justify-content: center;
@@ -68,6 +69,46 @@
     left:-5px;
 }
 
+.tb__opts{
+    position: absolute;
+    bottom:0;
+    right:0;
+    transform: translateY(0px);
+    background-color: white;
+    border-radius: 4px;
+    padding:5px;
+    height:auto;
+    box-shadow: 0 0 10px rgb(187, 187, 187);
+    overflow: hidden;
+    transition: .3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.tb__opt a{
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: rgb(39, 39, 39);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+}
+
+.tb__opt:hover a{
+    background-color: rgb(55, 55, 244);
+    color:white
+}
+
+.active__menu {
+    transform: translateY(135px);
+    visibility: visible;
+    opacity: 1;
+}
+
 .tb__cnt__ctr{
     width:100%;
     height:auto;
@@ -83,7 +124,7 @@
 .tsk__tags__wpr{
     width:100%;
     height:auto;
-    margin-top:20px;
+    margin:20px 0;
     flex-wrap: wrap;
     gap:5px;
 }
@@ -96,19 +137,29 @@
     border-radius: 5px;
 }
 
-.tag__one{
+.client{
     color:rgb(5, 152, 5);
     background-color: rgba(0, 255, 0,.1);
 }
 
-.tag__two{
+.optimalization{
     color:rgb(255, 0, 98);
     background-color: rgba(255, 40, 198, 0.1);
 }
 
-.tag__three{
+.project{
     color:rgb(0, 51, 255);
     background-color: rgba(40, 87, 255, 0.1);
+}
+
+.integration{
+    color:rgb(165, 37, 245);
+    background-color: rgba(188, 118, 253,0.2);
+}
+
+.system{
+    color:rgb(177, 163, 2);
+    background-color: rgba(255, 255, 0, 0.3);
 }
 
 
@@ -205,8 +256,20 @@
     background-color: rgb(231, 231, 231);
 }
 
-
-
 .active .tb__name__opts__wpr .dots__arrow__wpr .arrow__wpr .arrow__img{
     transform:scale(0.6) rotate(0deg);
+}
+
+.atc__btn__wpr{
+    margin-bottom: 10px;
+}
+
+.atc__btn{
+    outline: none;
+    border: none;
+    background-color: rgb(168, 52, 231);
+    color:white;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    padding:4px 8px;
 }

@@ -1,12 +1,25 @@
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useNavigate, useLocation } from 'react-router'
 import WorkSpaceDetails from './WorkSpaceDetails'
 import WorkSpaceNLs from './WorkSpaceNLs'
 import TaskPanel from './TaskPanel'
 import CompletedPanel from './CompletedPanel'
 import TaskForm from './TaskForm'
+import EditTask from './EditTask'
+import ViewTask from './ViewTask'
+import UpdateCP from './UpdateCP'
 import '../css/PersonalWorkSpace.css'
+import DeleteTask from './DeleteTask'
+import { useEffect } from 'react'
 
 const PersonalWorkSpace = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        if(location.pathname === '/taskboard/home/personal/workspace'){
+            navigate('/taskboard/home/personal/workspace/tasks')
+        }
+    },[navigate,location])
 
     const wsDetails = {
         title: "Personal Work Space.",
@@ -23,6 +36,10 @@ const PersonalWorkSpace = () => {
                 <Route path='/tasks' element={<TaskPanel/>} />
                 <Route path='/completed' element={<CompletedPanel/>} />
                 <Route path='/addTask' element={<TaskForm/>} />
+                <Route path='/edittask/:id' element={<EditTask/>}/>
+                <Route path='/viewtask/:id' element={<ViewTask/>}/>
+                <Route path='/updatetask/:taskCategory/:id' element={<UpdateCP/>}/> 
+                <Route path='/deletetask/:taskCategory/:id' element={<DeleteTask/>}/>
             </Routes>
         </div>
     )

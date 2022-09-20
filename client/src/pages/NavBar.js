@@ -40,7 +40,7 @@ const NavBar = () => {
                             <li className='li__txt inbox__txt'>Inbox</li>
                         </Link>
 
-                        <Link to='/home/activity' className='nl__wpr flex-row'>
+                        <Link to='/taskboard/home/activity' className='nl__wpr flex-row'>
                             <div className='li__icn__ctr activity__icn__ctr'><img className='li__icn activity__icn' src={clock} alt='person icon' /></div>
                             <li className='li__txt activity__txt'>Activity</li>
                         </Link>
@@ -60,7 +60,7 @@ const NavBar = () => {
 
                     <ul onClick={(e) => handleMenuSlide(e)} className='nls__wpr nls__wpr__two'>
 
-                        <Link to='/home/personal/workspace' className='nl__wpr flex-row'>
+                        <Link to='/taskboard/home/personal/workspace' className='nl__wpr flex-row'>
                             <div className='li__icn__ctr personal__icn__ctr'><img className='li__icn personal__icn' src={folder} alt='person icon' /></div>
                             <li className='li__txt personal__txt'>Personal</li>
                         </Link>
@@ -84,7 +84,7 @@ const NavBar = () => {
 
             <div className='profile__hamburger__ctr flex-row'>
             <div className='profile__ctr'>
-                <Link to='#'>
+                <Link to='/taskboard/home/profile'>
                     <div className='profile__img__wpr'>
                         <img className='profile__img' src={avatar} alt='profile' />
                     </div>

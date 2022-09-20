@@ -198,4 +198,27 @@
     color:rgb(151, 150, 150);
 }
 
+.tsk__sbt__btn{
+    margin-top:20px;
+    outline:none;
+    border:none;
+    padding:5px 20px;
+    border-radius: 5px;
+    background-color: rgb(62, 62, 244);
+    color: white;
+    margin-bottom: 30px;
+}
 
+.error__text{
+    display:block;
+    color:red;
+    font-size: 1.2rem;
+    margin-top:10px;
+    letter-spacing: .3px;
+}
+
+.success__text{
+    color:rgb(68, 187, 68);
+    letter-spacing: .3px;
+    font-size: 1.3rem;
+}

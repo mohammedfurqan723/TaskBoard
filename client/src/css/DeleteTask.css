@@ -1,0 +1,50 @@
+.dt__section{
+    width: 100%;
+    height:auto;
+    margin-top: 10px;
+}
+
+.dt__title{
+    font-size: 1.7rem;
+    color:rgb(71, 77, 242);
+    margin-bottom:15px;
+}
+
+.dt__dialogu__box{
+    width:300px;
+    height:auto;
+    margin: auto;
+}
+
+.dt__desc{
+    font-size: 1.3rem;
+    letter-spacing: .3px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.dt__taskName{
+    color:rgb(255, 255, 255);
+    background-color: rgb(55, 55, 251);
+    padding:0 5px;
+}
+
+.delete__btn,
+.cancel__btn{
+    width:100px;
+    padding:3px 0;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.delete__btn{
+    margin-right: 10px;
+    background-color: rgb(55, 55, 246);
+    color:white;
+}
+
+.cancel__btn{
+    background-color: rgb(255, 34, 34);
+    color:white;
+}

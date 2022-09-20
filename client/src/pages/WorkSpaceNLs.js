@@ -7,10 +7,10 @@ const WorkSpaceNLs = ({ panel, data }) => {
             <ul className='panel__nls flex-row'>
                 <span className='flex-row'>
                 {data.map((item, id) =>
-                    <NavLink className={({isActive}) => isActive ? 'active' : ''} key={id} to={`/home/${panel}/workspace/${item}`}><li className='panel__nl'>{item}</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? 'active' : ''} key={id} to={`/taskboard/home/${panel}/workspace/${item}`}><li className='panel__nl'>{item}</li></NavLink>
                 )}
                 </span>
-                <Link className='addtsk__btn' to={`/home/${panel}/workspace/addTask`}>Add Task</Link>
+                <Link className='addtsk__btn' to={`/taskboard/home/${panel}/workspace/addTask`}>Add Task</Link>
             </ul>
             <span className='hr__line' />
         </div>

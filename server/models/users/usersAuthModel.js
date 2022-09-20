@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const {Schema, model, Types} = require('mongoose');
 
-const usersSchema = new mongoose.Schema({
+const userAuthSchema = new Schema({
 
     firstName:{
         type:String,
@@ -18,20 +18,40 @@ const usersSchema = new mongoose.Schema({
         trim:true,
         unique:true
     },
-    password:{
-        type:String,
-        required:[true, "Please Enter Your Password."],
-        trim:true
-    },
     phoneNumber:{
         type:Number,
         required:[true,"Please Enter Your Mobile Number."],
         trim:true
+    },
+    password:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    conformPassword:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    isActive:{
+        type:Boolean,
+        default:false
+    },
+    userDetails:{
+        type:Types.ObjectId,
+        ref:'UserDetails'
+    },
+    personalTasks:{
+        type:Types.ObjectId,
+        ref:"PersonalTask"
+    },
+    activities:{
+        type:Types.ObjectId,
+        ref:"Activities"
     }
-
 },
 {
     timestamps:true
 });
 
-module.exports = mongoose.model("Users", usersSchema);
+module.exports = model("UserAuth", userAuthSchema);

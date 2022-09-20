@@ -1,0 +1,75 @@
+.wp__section{
+    width:100%;
+    height: auto;
+    min-height:100vh;
+    padding:10px;
+    padding-top: 30px;
+}
+
+.wp__banner__ctr{
+    width:80%;
+    max-height:40%;
+    margin: auto;
+}
+
+.wp__banner{
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.wp__content__ctr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.welcome__title{
+    font-size: 2rem;
+    color:rgb(55, 55, 55);
+}
+
+.welcome__desc{
+    max-width: 280px;
+    text-align: center;
+    color:rgb(94, 94, 94);
+    margin-top:10px;
+
+    font-size: 1.1rem;
+    letter-spacing: .8px;
+}
+
+.login__btn,
+.create__btn{
+    width:200px;
+    padding:10px 0;
+    text-align: center;
+    border-radius: 3px;
+    font-size:1.3rem;
+    letter-spacing: 1px;
+    transition: .3s ease-in-out;
+}
+
+.login__btn{
+    margin-top:20px;
+    background-color: rgb(68, 68, 249);
+    color:white;
+}
+
+.create__btn{
+    margin-top:10px;
+    color:rgb(3, 3, 3);
+    box-shadow: 0 0 10px 5px rgb(245, 245, 245);
+    border:1px solid rgb(221, 220, 220);
+}
+
+.login__btn:hover{
+    background-color: blue;
+}
+
+.create__btn:hover{
+    background-color: rgba(0, 255, 0, 0.6);
+    color: white;
+}
